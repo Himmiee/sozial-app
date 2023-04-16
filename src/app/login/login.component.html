@@ -53,11 +53,12 @@
             </p>
             <div class="btn flex justify-center">
               <button
-                class="bg-black text-white px-3 py-1 sm:w-56 w-[378px] h-10 mt-3 rounded-[3px]"
-                type="submit"
-              >
-                Submit
-              </button>
+              class="bg-black text-white px-3 py-1 sm:w-56 w-[378px] h-10 mt-3 rounded-[3px] disabled:bg-gray-400"
+              type="submit"
+              [disabled]="LoginForm.invalid"
+            >
+              Submit
+            </button>
             </div>
           </form>
         </div>
