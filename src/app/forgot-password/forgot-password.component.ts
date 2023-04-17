@@ -6,6 +6,7 @@ import {
   Validators,
   FormControlName,
 } from '@angular/forms';
+import { IForgot } from '../Models/login.model';
 
 
 @Component({
@@ -15,25 +16,13 @@ import {
 })
 export class ForgotPasswordComponent implements OnInit {
 
-  ForgotPasswordForm = new FormGroup({
- 
-    Email: new FormControl('Kiyan@gmail.com', [
-      Validators.required,
-      Validators.email,
-    ]),
-    DOB: new FormControl('02/02/24', [Validators.required]),
-  })
+  forgotPasswordForm = new IForgot("kiyan@gmail.com","02/02/20")
   ngOnInit(): void {}
-  onSubmit(form: NgForm): void {
-    console.log(this.ForgotPasswordForm.value);
+  onSubmit(Form: NgForm): void {
+    console.log(Form.value);
   }
 
-  get Email() {
-    return this.ForgotPasswordForm.get('Email');
-  }
-  get DOB() {
-    return this.ForgotPasswordForm.get('DOB');
-  }
+
 
 
 }

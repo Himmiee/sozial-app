@@ -25,7 +25,7 @@
         <p class="flex justify-center font-light mt-1 text-sm">
           Input your Details to continue from here!
         </p>
-        <form class="" [formGroup]="RegisterForm" (ngSubmit)="onSubmit($event)">
+        <form class="" #form="ngForm" (ngSubmit)="onSubmit(form)">
           <div class="main flex w-56 ju gap-6">
             <label>
               <p class="py-2 text-sm font-medium">Firstname:</p>
@@ -33,7 +33,9 @@
                 class="border-black sm:w-64 w-44 h-8 text-sm text-gray-500 p-2"
                 type="text"
                 placeholder="Firstname"
-                formControlName="Firstname"
+                name="firstname"
+                #Firstname = "ngModel"
+                [(ngModel)]="registerForm.firstName"
                   />
               <b *ngIf= "Firstname && Firstname.invalid && Firstname.touched"> Input is invalid.. This field is required</b>
             </label>
@@ -43,7 +45,9 @@
                 class="border-black sm:w-64 w-44 h-8 text-sm text-gray-500 p-2"
                 type="text"
                 placeholder="Lastname"
-                formControlName="Lastname"
+                name="lastname"
+                #Lastname = "ngModel"
+                [(ngModel)]="registerForm.lastName"
               />
               <b *ngIf= "Lastname && Lastname.invalid && Lastname.touched"> Input is invalid.. This field is required</b>
             </label>
@@ -55,7 +59,9 @@
                 class="border-black sm:w-[534px] w-[375px] h-8 block text-sm text-gray-500 p-2"
                 type="email"
                 placeholder="Email"
-                formControlName="Email"
+                name="email"
+                #Email = "ngModel"
+                [(ngModel)]="registerForm.email"
               />
               <b *ngIf= "Email && Email.invalid && Email.touched"> Input is invalid.. This field is required</b>
             </label>
@@ -66,7 +72,9 @@
                   class="border-black sm:w-64 w-44 h-8 text-sm block text-gray-500 p-2"
                   type="date"
                   placeholder="Date"
-                  formControlName="DOB"
+                  name="dob"
+                  #DOB = "ngModel"
+                  [(ngModel)]="registerForm.dob"
                 />
                 <b *ngIf= "DOB && DOB.invalid && DOB.touched"> Input is invalid.. This field is required</b>
               </label>
@@ -76,7 +84,9 @@
                   class="border-black sm:w-64 w-44 h-8 text-sm block text-gray-500 p-2"
                   type="text"
                   placeholder="Gender"
-                  formControlName="Gender"
+                  name="gender"
+                  #Gender = "ngModel"
+                  [(ngModel)]="registerForm.gender"
                 />
                 <b *ngIf= "Gender && Gender.invalid && Gender.touched"> Input is invalid.. This field is required</b>
               </label>
@@ -87,7 +97,9 @@
                 class="border-black sm:w-[534px] text-sm w-[375px] h-8 block text-gray-500 p-2"
                 type="password"
                 placeholder="Password"
-                formControlName="Password"
+                name="password"
+                #Password = "ngModel"
+                [(ngModel)]="registerForm.password"
               />
               <b *ngIf= "Password && Password.invalid && Password.touched"> Input is invalid.. This field is required</b>
             </label>
@@ -99,7 +111,7 @@
             <button
             class="bg-black text-white px-3 py-1 sm:w-56 w-[378px] h-10 mt-3 rounded-[3px] disabled:bg-gray-400"
             type="submit"
-            [disabled]="RegisterForm.invalid"
+            [disabled]="form.invalid"
           >
             Submit
           </button>

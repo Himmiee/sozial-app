@@ -25,7 +25,7 @@
           <p class="flex justify-center font-light mt-1 text-sm">
             Input your Details to continue from here!
           </p>
-          <form class="" [formGroup]="LoginForm" (ngSubmit)="onSubmit($event)">
+          <form class="" #form="ngForm" (ngSubmit)="onSubmit(form)">
             <div class="rest block">
               <label>
                 <p class="py-2 text-sm font-medium">Email:</p>
@@ -33,9 +33,11 @@
                   class="border-black sm:w-[534px] w-[375px] h-8 block text-sm text-gray-500 p-2"
                   type="email"
                   placeholder="Email"
-                  formControlName="Email"
+                  name="email"
+                  [(ngModel)]="loginForm.email"
+                  #email = "ngModel"
                 />
-                <b *ngIf= "Email && Email.invalid && Email.touched"> Input is invalid.. This field is required</b>
+                <b *ngIf= "email && email.invalid && email.touched"> Input is invalid.. This field is required</b>
               </label>
               <label>
                 <p class="py-2 text-sm font-medium">Password:</p>
@@ -43,9 +45,11 @@
                   class="border-black sm:w-[534px] text-sm w-[375px] h-8 block text-gray-500 p-2"
                   type="password"
                   placeholder="Password"
-                  formControlName="Password"
+                  name="password"
+                  [(ngModel)]="loginForm.password"
+                  #password = "ngModel"
                 />
-                <b *ngIf= "Password && Password.invalid && Password.touched"> Input is invalid.. This field is required</b>
+                <b *ngIf= "password && password.invalid && password.touched"> Input is invalid.. This field is required</b>
               </label>
             </div>
             <p class="text-sm pt-3">
@@ -55,7 +59,7 @@
               <button
               class="bg-black text-white px-3 py-1 sm:w-56 w-[378px] h-10 mt-3 rounded-[3px] disabled:bg-gray-400"
               type="submit"
-              [disabled]="LoginForm.invalid"
+              [disabled]="form.invalid"
             >
               Submit
             </button>

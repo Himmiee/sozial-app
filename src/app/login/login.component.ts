@@ -6,34 +6,32 @@ import {
   Validators,
   FormControlName,
 } from '@angular/forms';
-
+import { ILogin, LoginRes } from '../Models/login.model';
+import { AuthService } from '../Services/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
-  LoginForm = new FormGroup({
-    Email: new FormControl('Kiyan@gmail.com', [
-      Validators.required,
-      Validators.email,
-    ]),
-    Password: new FormControl('Greatt', [
-      Validators.required,
-      Validators.minLength(6),
-    ]),
-  });
-  ngOnInit(): void {}
-  onSubmit(form: NgForm): void {
-    console.log(this.LoginForm.value);
+  loginForm = new ILogin('kiyan@gmail.com', '123456');
+  ngOnInit(): void {
+    this.onSubmit;
   }
-  get Email() {
-    return this.LoginForm.get('Email');
-  }
-  get Password() {
-    return this.LoginForm.get('Password');
+  onSubmit(Form: NgForm): void {
+    console.log(Form.value);
+    this.authService.login(Form.value).subscribe((res: any) => {
+      if (res) {
+        localStorage.setItem("token", res.token)
+        console.log('yuh');
+      } else {
+        console.log('you thought',res);
+
+
+      }
+    });
   }
 }

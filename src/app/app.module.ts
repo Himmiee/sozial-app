@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AuthService } from './Services/auth-service';
+import { AuthService } from './Services/auth.service';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+
+import { httpInterceptorProviders } from './helpers/httpinceptors';
 
 @NgModule({
   declarations: [
@@ -18,16 +20,16 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     RegisterComponent,
     LoginComponent,
     ForgotPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [httpInterceptorProviders],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

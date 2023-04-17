@@ -6,6 +6,8 @@ import {
   Validators,
   FormControlName,
 } from '@angular/forms';
+import { IRegister } from '../Models/login.model';
+import { AuthService } from '../Services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -13,42 +15,20 @@ import {
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  constructor() {}
+  constructor(private authService:AuthService) {}
+  registerForm = new IRegister('kiyan', 'Greatt','kiyan@gmail.com','22/02/02','Male','123456');
 
-  RegisterForm = new FormGroup({
-    Firstname: new FormControl('Kiyan', Validators.required),
-    Lastname: new FormControl('Greatt', Validators.required),
-    Email: new FormControl('Kiyan@gmail.com', [
-      Validators.required,
-      Validators.email,
-    ]),
-    DOB: new FormControl('02/02/24', [Validators.required]),
-    Gender: new FormControl('Male', Validators.required),
-    Password: new FormControl('Greatt', [
-      Validators.required,
-      Validators.minLength(6),
-    ]),
-  });
   ngOnInit(): void {}
-  onSubmit(form: NgForm): void {
-    console.log(this.RegisterForm.value);
+  onSubmit( Form: NgForm): void {
+    console.log(Form.value);
+    this.authService.register(Form.value).subscribe((data:any) =>{
+      if(data){
+        console.log(data.message);
+      } else {
+        console.log(data,"J");
+        // console.log(data.success)
+      }
+    })
   }
-  get Firstname() {
-    return this.RegisterForm.get('Firstname');
-  }
-  get Lastname() {
-    return this.RegisterForm.get('Lastname');
-  }
-  get Email() {
-    return this.RegisterForm.get('Email');
-  }
-  get DOB() {
-    return this.RegisterForm.get('DOB');
-  }
-  get Gender() {
-    return this.RegisterForm.get('Gender');
-  }
-  get Password() {
-    return this.RegisterForm.get('Password');
-  }
+
 }

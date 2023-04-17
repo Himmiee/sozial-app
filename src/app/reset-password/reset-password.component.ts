@@ -6,6 +6,7 @@ import {
   Validators,
   FormControlName,
 } from '@angular/forms';
+import { IReset } from '../Models/login.model';
 
 @Component({
   selector: 'app-reset-password',
@@ -14,31 +15,13 @@ import {
 })
 export class ResetPasswordComponent implements OnInit {
   constructor() {}
+  resetPasswordForm = new IReset('123456','123456');
 
-  ResetPasswordForm = new FormGroup({
-    Password: new FormControl('Greatt', [
-      Validators.required,
-      Validators.minLength(6),
-    ]),
-    ConfirmPassword: new FormControl('Greatt', [
-      Validators.required,
-      Validators.minLength(6),
-    ]),
-  });
   ngOnInit(): void {}
-  onSubmit(form: NgForm): void {
-    console.log(this.ResetPasswordForm.value);
+  onSubmit(Form: NgForm): void {
+    console.log(Form.value);
   }
 
-  get Password() {
-    return this.ResetPasswordForm.get('Password');
-  }
-  get ConfirmPassword() {
-    return this.ResetPasswordForm.get('ConfirmPassword');
-  }
-  get f () {
-    return this.ResetPasswordForm.controls
-   
-  }
+ 
 
 }
