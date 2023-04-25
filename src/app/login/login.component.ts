@@ -6,6 +6,7 @@ import {
   Validators,
   FormControlName,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ILogin, LoginRes } from '../Models/login.model';
 import { AuthService } from '../Services/auth.service';
 
@@ -15,7 +16,7 @@ import { AuthService } from '../Services/auth.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router : Router) {}
 
   loginForm = new ILogin('kiyan@gmail.com', '123456');
   ngOnInit(): void {
@@ -26,6 +27,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(Form.value).subscribe((res: any) => {
       if (res) {
         localStorage.setItem("token", res.token)
+        this.router.navigate(['/home']);
         console.log('yuh');
       } else {
         console.log('you thought',res);

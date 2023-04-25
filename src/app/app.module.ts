@@ -13,6 +13,10 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 import { httpInterceptorProviders } from './helpers/httpinceptors';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HomeComponent } from './home/home.component';
+
 
 @NgModule({
   declarations: [
@@ -21,6 +25,8 @@ import { httpInterceptorProviders } from './helpers/httpinceptors';
     LoginComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
+    SidebarComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +34,9 @@ import { httpInterceptorProviders } from './helpers/httpinceptors';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    FontAwesomeModule,
+
+
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent],
