@@ -1,5 +1,54 @@
+<div class="onboarding sm:min-h-screen sm:grid sm:grid-cols-[auto_1fr]">
+  <aside
+    class="bg-black fixed bottom-0 w-screen sm:relative h-6 sm:min-h-screen sm:w-[150px] lg:w-[300px] p-[48px] flex sm:flex-col gap-20"
+    *ngIf="showNav === true"
+  >
+    <div class="logo lg:w-48 sm:w-32 -ml-3 lg:h-8 sm:flex hidden lg:-ml-8">
+      <img src="assets/try.png" alt="h" class="" />
+    </div>
+    <ul
+      class="flex justify-evenly w-[100%] sm:flex-col items-center sm:items-start sm:gap-12"
+    >
+      <li
+        [routerLinkActive]="'active'"
+        class="flex gap-[20px] sm:text-white text-gray-400"
+        *ngFor="let data of navData"
+      >
+        <a [routerLink]="[data.routelink]">
+          <fa-icon [icon]="data.icon" class="px-8  text-base"></fa-icon>
+          <span
+            class="block lg:text-sm sm:font-medium text-[12px] ml-[22px] sm:hidden lg:inline-flex"
+            >{{ data.label }}</span
+          >
+        </a>
+      </li>
+    </ul>
+    <div class="end ml-5 bottom-0 absolute">
+      <!-- <div
+        class="profile flex "
+      > -->
+      <!-- <div class="w-6 h-6 lg:w-9 lg:h-9 ml-2 lg:ml-5 rounded-3xl bg-white">
+          <img
+            src="assets/try.png"
+            alt="n"
+            class=""
+          />
+        </div>
+        <div class="other hidden lg:block mx-5 text-[12px] text-gray-400">
+          <p>Badi Kiyan</p>
+          <p>Tech bruh</p>
+        </div>
+      </div> -->
+      <div
+        class="hidden sm:flex mt-3 gap-9 bg-black w-[100%] p-3 rounded-md text-white cursor-pointer"
+      >
+        <fa-icon [icon]="faSignInAlt" class="text-lg text-white"></fa-icon>
+        <h1 class="lg:flex font-medium text-white hidden">Logout</h1>
+      </div>
+    </div>
+  </aside>
 
-<ng-container *ngIf="showNav === true">
- <app-sidebar></app-sidebar>
-</ng-container>
-<router-outlet></router-outlet>
+  <main class="">
+    <router-outlet></router-outlet>
+  </main>
+</div>

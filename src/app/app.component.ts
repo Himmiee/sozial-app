@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { AuthService } from './Services/auth.service';
 import { NavigationEnd, Router } from '@angular/router';
+import { navData } from './Models/navdata';
+import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +12,10 @@ import { NavigationEnd, Router } from '@angular/router';
 export class AppComponent {
   title = 'sozial-app';
   showNav = true;
+  
+  faSignInAlt = faSignInAlt
+
+  navData = navData
   constructor(private authService: AuthService, private router: Router){
     router.events.subscribe(
       (val) => {

@@ -13,10 +13,12 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 import { httpInterceptorProviders } from './helpers/httpinceptors';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { HomeComponent } from './home/home.component';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HomeComponent } from './pages/home/home.component';
+import { NetworkComponent } from './pages/network/network.component';
+import { FriendsComponent } from './pages/friends/friends.component';
+import { SettingsComponent } from './pages/settingscomp/settings.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +27,10 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
-    SidebarComponent,
     HomeComponent,
+    NetworkComponent,
+    FriendsComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,8 +39,6 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     ReactiveFormsModule,
     FontAwesomeModule,
-
-
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent],
