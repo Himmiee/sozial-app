@@ -1,10 +1,11 @@
 .active{
-   background-color: white;
+   background-color: #fff;
    color: black;
    height: 40px;
    align-items: center;
-   width: 253px;
+   width: 103px;
    border-radius: 2px;
+   border-left: 3px solid rgb(255, 69, 0);
 
 }
 body{
@@ -22,6 +23,7 @@ font-family: Arial, Helvetica, sans-serif;
         background-color: black;
         width: 80px;
         color: white;
+        border-left:none;
         
     }
 }

@@ -19,6 +19,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { NetworkComponent } from './pages/network/network.component';
 import { FriendsComponent } from './pages/friends/friends.component';
 import { SettingsComponent } from './pages/settingscomp/settings.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { SettingsComponent } from './pages/settingscomp/settings.component';
     NetworkComponent,
     FriendsComponent,
     SettingsComponent,
+    SidebarComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

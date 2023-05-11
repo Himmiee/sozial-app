@@ -1,10 +1,11 @@
-<div class="onboarding sm:min-h-screen sm:grid sm:grid-cols-[auto_1fr]">
+<div class="onboarding sm:min-h-screen sm:grid sm:grid-cols-[auto_1fr] ">
   <aside
-    class="bg-black fixed bottom-0 w-screen sm:relative h-6 sm:min-h-screen sm:w-[150px] lg:w-[300px] p-[48px] flex sm:flex-col gap-20"
+    class="bg-black fixed sm:rounded-r-md bottom-0 w-screen sm:relative h-6 sm:min-h-screen sm:w-[150px]  p-[48px] flex sm:flex-col gap-20"
     *ngIf="showNav === true"
   >
-    <div class="logo lg:w-48 sm:w-32 -ml-3 lg:h-8 sm:flex hidden lg:-ml-8">
-      <img src="assets/try.png" alt="h" class="" />
+    <div class="logo sm:w-48 sm:-ml-16  sm:h-8 sm:flex hidden sm:mx-auto text-white">
+      <!-- <img src="assets/try.png" alt="h" class="" /> -->
+      <p class="text-white text-2xl font-bold sm:flex justify-center italic mx-auto hidden">Szl <span class="text-orange-600 rounded-sm text-2xl">.</span></p>
     </div>
     <ul
       class="flex justify-evenly w-[100%] sm:flex-col items-center sm:items-start sm:gap-12"
@@ -15,9 +16,10 @@
         *ngFor="let data of navData"
       >
         <a [routerLink]="[data.routelink]">
-          <fa-icon [icon]="data.icon" class="px-8  text-base"></fa-icon>
+          
+          <fa-icon [icon]="data.icon" class="px-8  text-md"></fa-icon>
           <span
-            class="block lg:text-sm sm:font-medium text-[12px] ml-[22px] sm:hidden lg:inline-flex"
+            class="block lg:text-sm sm:font-medium text-[12px] ml-[22px] sm:hidden "
             >{{ data.label }}</span
           >
         </a>
@@ -43,7 +45,7 @@
         class="hidden sm:flex mt-3 gap-9 bg-black w-[100%] p-3 rounded-md text-white cursor-pointer"
       >
         <fa-icon [icon]="faSignInAlt" class="text-lg text-white"></fa-icon>
-        <h1 class="lg:flex font-medium text-white hidden">Logout</h1>
+        <!-- <h1 class="lg:flex font-medium text-white hidden">Logout</h1> -->
       </div>
     </div>
   </aside>
