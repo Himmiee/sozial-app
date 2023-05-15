@@ -21,6 +21,7 @@ import { FriendsComponent } from './pages/friends/friends.component';
 import { SettingsComponent } from './pages/settingscomp/settings.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderComponent } from './header/header.component';
+import { profileService } from './Services/profile.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { HeaderComponent } from './header/header.component';
     ReactiveFormsModule,
     FontAwesomeModule,
   ],
-  providers: [httpInterceptorProviders],
+  providers: [httpInterceptorProviders, AuthService, profileService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

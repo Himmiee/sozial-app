@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faArrowAltCircleDown } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-friends',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FriendsComponent implements OnInit {
 
+
+  faArrowAltCircleDown = faArrowAltCircleDown
   constructor() { }
 
   ngOnInit(): void {

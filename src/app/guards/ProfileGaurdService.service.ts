@@ -11,8 +11,8 @@ export class ProfileGuard implements CanActivate{
     constructor(private router:Router) {}
 
     canActivate(route:ActivatedRouteSnapshot):boolean{
-        this.token = localStorage.getItem('Token_Number');
-        if(this.token == null){
+        this.token = localStorage.getItem('token');
+        if(this.token == " " || this.token == null){
             this.router.navigate(['/']);
             return false
         }

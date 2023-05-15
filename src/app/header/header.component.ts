@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { faSearch, faPlus ,faBell} from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faPlus ,faBell,faCaretDown ,faCog} from '@fortawesome/free-solid-svg-icons';
+
 
 
 @Component({
@@ -13,6 +14,8 @@ export class HeaderComponent implements OnInit {
   faSearch = faSearch
   faPlus = faPlus
   faBell = faBell
+  faCog = faCog
+  faCaretDown = faCaretDown
 
   ngOnInit(): void {
   }

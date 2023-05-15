@@ -1,2 +1,18 @@
 <app-header></app-header>
-<p class="flex justify-center items-center">Home works!</p>
+<section class="overflow-y-scroll h-[100vh] w-[100%] mt-5 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4">
+  <div *ngFor="let item of items" class="flex justify-center">
+    <!-- <ul>{{item.post}}</ul> -->
+    <div class="bg-blue-200 flex border-[1.4px] border-blue-700 m-2 sm:h-24  justify-center  h-36 w-[87%] sm:w-[210px] lg:w-[218px] rounded-xl px-2">
+      <div class="">
+        <p class="text-md font-semibold item-center  text-gray-700 mt-6 sm:mt-4">
+          {{ item.profession }}
+        </p>
+        <p class="text-[10px] item-center text-gray-800">** {{ item.userName }} **</p>
+        <p class="text-sm item-center text-gray-700">{{ item.post | slice:0:24 }}</p>
+      </div>
+      <div class="flex ml-auto" >
+        <fa-icon [icon]="faStar" class="text-lg text-blue-700"></fa-icon>
+      </div>
+    </div>
+  </div>
+</section>

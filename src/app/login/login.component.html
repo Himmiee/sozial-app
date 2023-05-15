@@ -34,11 +34,12 @@
                   type="email"
                   placeholder="Email"
                   name="email"
+                  id="email"
                   pattern="^([a-zA-Z0-9]+)@([a-zA-Z0-9]+)\.([a-zA-Z]{2,5})$"
-                  #mail="ngModel"
+                  #email="ngModel"
                   [(ngModel)]="loginForm.email"
                 />
-                <div class="text-red-600 py-2 text-[12px]" *ngIf= "mail && mail.invalid && mail.touched"> Mail format abc@gmail.com</div>
+                <div class="text-red-600 py-2 text-[12px]" *ngIf= "email && email.invalid && email.touched"> Mail format abc@gmail.com</div>
               </label>
               <label>
                 <p class="py-2 text-sm font-medium">Password:</p>
@@ -49,11 +50,11 @@
                   name="password"
                   id="password"
                   [(ngModel)]="loginForm.password"
-                  #pswd = "ngModel"
-                  minlength="6"
+                  #password = "ngModel"
+                  minlength="5"
                    
                 />
-                <div class="text-red-600 py-2 text-[12px]" *ngIf= "pswd && pswd.invalid && pswd.touched "> Minimum of six characters.. This field is required</div>
+                <div class="text-red-600 py-2 text-[12px]" *ngIf= "password && password.invalid && password.touched "> Minimum of five characters.. This field is required</div>
               </label>
             </div>
             <p class="text-[12px] text-gray-300 pt-3">
