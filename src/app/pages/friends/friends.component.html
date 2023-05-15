@@ -1,73 +1,105 @@
 <app-header></app-header>
-<section class=" relative overflow-y-scroll  w-[100%] overflow-x-clip">
-<div
-class="header flex p-3 sm:p-0 flex-col sm:flex-row justify-between  border-2 border-gray-200 rounded-md sm:border-none  mt-8 mx-6 sm:mx-10 lg:mx-12 sm:w-[90%]"
->
-<div
-  class="wrap flex  flex-col sm:flex-row justify-center items-center  gap-3"
->
-  <img
-    src="assets/avatar3.jpg"
-    class="w-12 h-12 sm:w-[68px] sm:h-[68px] rounded-3xl sm:rounded-[90px]"
-    alt=""                                                                                               
-  />
-  <div class="item my-3 sm:my-1">
-    <p class="text-md font-medium">@Himmie</p>
-    <p class="text-sm hidden sm:flex font-medium text-gray-400">
-      Daya Ladhazia
-    </p>
-    <p class="text-sm hidden sm:flex font-medium text-gray-400">
-      Biggest Dev JSYK.
-    </p>
+<section class="w-[100%]">
+  <div
+    class="header overflow-x-clip flex p-3 sm:p-0 flex-col sm:flex-row justify-between border-2 border-gray-200 rounded-md sm:border-none mt-8 mx-6 sm:mx-10 lg:mx-12 sm:w-[90%]"
+  >
+    <div
+      class="wrap flex flex-col sm:flex-row justify-center items-center mb-2 gap-3"
+    >
+      <img
+        src="assets/avatar3.jpg"
+        class="w-12 h-12 sm:w-[68px] sm:h-[68px] rounded-3xl sm:rounded-[90px]"
+        alt=""
+      />
+      <div class="item my-3 sm:my-2">
+        <p class="text-md font-semibold ">@Himmie</p>
+        <p class="text-sm hidden sm:flex font-medium text-gray-400">
+          Daya Ladhazia
+        </p>
+        <p class="text-sm hidden sm:flex font-medium text-gray-400">
+          Biggest Dev JSYK.
+        </p>
+      </div>
+    </div>
+    <div class="flex justify-around sm:justify-between sm:w-[65%]">
+      <div class="">
+        <div class="main flex gap-2 font-medium">
+          <fa-icon
+            [icon]="faArrowAltCircleDown"
+            class="hidden mt-[3px] sm:flex text-base text-black"
+          ></fa-icon>
+          <p class="text-sm font-medium text-gray-400">Following</p>
+        </div>
+        <div class="item">
+          <p
+            class="flex justify-center sm:justify-start sm:text-2xl  font-semibold mt-1"
+          >
+            4200
+          </p>
+          <p class="text-sm text-gray-400 sm:flex hidden">
+            <span class="text-blue-700 text-sm">20%-</span> ffg activity
+          </p>
+        </div>
+      </div>
+      <div class="">
+        <div class="main flex gap-2 font-medium">
+          <fa-icon
+            [icon]="faArrowAltCircleDown"
+            class="hidden mt-[3px] sm:flex text-base text-black"
+          ></fa-icon>
+          <p class="text-sm font-medium text-gray-400">Followers</p>
+        </div>
+        <div class="item">
+          <p
+            class="flex justify-center sm:justify-start sm:text-2xl  font-semibold mt-1"
+          >
+            4200
+          </p>
+          <p class="text-sm text-gray-400 sm:flex hidden">
+            <span class="text-blue-700 text-sm">20%-</span> ffg activity
+          </p>
+        </div>
+      </div>
+      <div class="">
+        <div class="main flex gap-2 font-medium">
+          <fa-icon
+            [icon]="faArrowAltCircleDown"
+            class="hidden mt-[3px] sm:flex text-base text-black"
+          ></fa-icon>
+          <p class="text-sm font-medium text-gray-400">Activities</p>
+        </div>
+        <div class="item">
+          <p
+            class="flex justify-center sm:justify-start sm:text-2xl  font-semibold mt-1"
+          >
+            4200
+          </p>
+          <p class="text-sm text-gray-400 sm:flex hidden">
+            <span class="text-blue-700 text-sm">20%-</span> ffg activity
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-<div class="flex justify-around sm:justify-between sm:w-[65%]">
-<div class="">
-  <div class="main flex gap-2 font-medium">
-    <fa-icon
-      [icon]="faArrowAltCircleDown"
-      class="hidden mt-[3px] sm:flex text-base text-black"
-    ></fa-icon>
-    <p class="text-sm font-medium text-gray-400">Following</p>
-  </div>
-  <div class="item">
-    <p class="flex justify-center sm:justify-start sm:text-2xl font-medium sm:font-semibold mt-1">4200</p>
-    <p class="text-sm text-gray-400 sm:flex hidden">
-      <span class="text-blue-700 text-sm">20%-</span> ffg activity
-    </p>
-  </div>
-</div>
-<div class="">
-  <div class="main flex  gap-2 font-medium">
-    <fa-icon
-      [icon]="faArrowAltCircleDown"
-      class="hidden mt-[3px] sm:flex text-base text-black"
-    ></fa-icon>
-    <p class="text-sm font-medium text-gray-400">Followers</p>
-  </div>
-  <div class="item">
-    <p class="flex justify-center sm:justify-start sm:text-2xl font-medium sm:ont-semibold mt-1">4200</p>
-    <p class="text-sm text-gray-400 sm:flex hidden">
-      <span class="text-blue-700 text-sm">20%-</span> ffg activity
-    </p>
-  </div>
-</div>
-<div class="">
-  <div class="main flex  gap-2 font-medium">
-    <fa-icon
-      [icon]="faArrowAltCircleDown"
-      class="hidden mt-[3px] sm:flex text-base text-black"
-    ></fa-icon>
-    <p class="text-sm font-medium text-gray-400">Activities</p>
-  </div>
-  <div class="item">
-    <p class="flex justify-center sm:justify-start sm:text-2xl font-medium sm:ont-semibold mt-1">4200</p>
-    <p class="text-sm text-gray-400 sm:flex hidden">
-      <span class="text-blue-700 text-sm">20%-</span> ffg activity
-    </p>
-  </div>
-</div>
-</div>
-</div>
+  <h1 class="flex font-semibold mx-6 sm:mx-9 py-4">All Friends</h1>
+  <div
+    class="part sm:border-2 justify-start border-gray-300 h-[45vh] sm:w-[92%]  mx-6 sm:mx-9 rounded-xl sm:h-[540px] overflow-y-auto"
+  >
+    <div *ngFor="let item of items"
+      class="grid grid-cols-3 mb-2 sm:mb-0 lg:grid-cols-4 border-2 sm:border-t-0 sm:rounded-none sm:border-r-0 sm:border-l-0 rounded-lg items-center px-2 mt-1 sm:mx-4 py-3 sm:py-0 sm:pt-4 sm:pb-2 sm:border-b-2 border-gray-200"
+    >
+      <div class="flex items-center gap-4">
+        <div class="w-10 h-10 rounded-[70px] pt-2  bg-blue-600">
+          <p class="text-white font-semibold  flex justify-center">U</p>
+        </div>
+        <p class="text-sm text-gray-700 font-semibold hi">User <span>{{item._id | slice:6:9}}</span> </p>
+      </div>
 
+      <p class="text-sm text-gray-500 font-semibold gap-2">User Id: <span class="font-medium">{{item.userId | slice:0:12}}</span></p>
+      <p class="hidden lg:flex text-sm text-gray-500 font-semibold gap-2">Friend Id:<span class="font-medium">{{item.friendId | slice:0:14}}</span></p>
+      <p class="text-sm text-gray-500 font-semibold gap-2">Status: <span class="font-medium">{{item.status}}</span></p>
+    </div>
+    
+    
+  </div>
 </section>
