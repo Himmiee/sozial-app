@@ -1,3 +1,50 @@
-<section class="h-[100vh]">
-    <p>Network works!</p>
-</section>
+<app-header></app-header>
+<div class="">
+  <h1 class="mx-12 my-3 font-semibold">Friend Requests</h1>
+  <div class="sm:h-[82vh] h-[70vh] overflow-y-auto flex ml-12 justify-center ">
+    <div
+    class="overflow-y-scroll h-[75vh] sm:h-[88vh] max-h-screen w-[100%] mt-5 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4"
+    >
+      <div *ngFor="let item of items" class="items-center gap-2 sm:w-[180px] w-[170px] lg:w-[230px]">
+        <div class="border-2 border-blue-700 p-5 mt-4 rounded-t-md">
+          <div class="flex items-center sm:hidden gap-4">
+            <div class="w-10 h-10 rounded-[70px] pt-2 bg-blue-600">
+              <p class="text-white font-semibold flex justify-center">U</p>
+            </div>
+            <p class="text-sm text-gray-700 font-semibold hi">
+              User <span>{{item._id | slice:6:9}}</span>
+            </p>
+          </div>
+          <p
+            class="text-sm hidden sm:grid lg:flex lg:gap-1 font-semibold text-gray-700"
+          >
+            UserId:
+            <span class="text-[11px] font-medium text-gray-600"
+              >{{item.userId | slice:0:12}}</span
+            >
+          </p>
+          <p
+            class="text-sm hidden sm:grid lg:gap-1 lg:flex font-semibold text-gray-700"
+          >
+            FriendId:
+            <span class="text-[11px] font-medium text-gray-600"
+              >{{item.userId | slice:0:12}}</span
+            >
+          </p>
+          <p class="text-sm mt-2 sm:mt-0 font-semibold text-gray-700">
+            Status:
+            <span class="text-[12px] font-medium text-gray-600"
+              >Pending R...</span
+            >
+          </p>
+        </div>
+        <div
+          class="bluBtn cursor-pointersm:w-[170px] lg:w-[230px] gap-2 border-2 bg-blue-800 border-blue-700 -mt-[2px] rounded-b-md items-center gap h-10 flex justify-center text-center p-2 text-white"
+        >
+          <p class="text-sm font-semibold">Add friend</p>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+</div>

@@ -1,17 +1,38 @@
-<app-header></app-header>
-<section class=" overflow-y-scroll h-[75vh] sm:h-[88vh] max-h-screen  w-[100%] mt-5 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4">
-  <div *ngFor="let item of items" class="flex justify-center ">
-    <!-- <ul>{{item.post}}</ul> -->
-    <div class="bg-blue-200 flex border-[1.4px] border-blue-700 m-2 sm:h-24  justify-center  h-28 w-[87%] sm:w-[210px] lg:w-[218px] rounded-xl px-2">
-      <div class="">
-        <p class="text-md font-semibold item-center  text-gray-700 mt-6 sm:mt-4">
-          {{ item.profession }}
-        </p>
-        <p class="text-[10px] item-center text-gray-800">** {{ item.userName }} **</p>
-        <p class="text-sm item-center text-gray-700">{{ item.post | slice:0:24 }}</p>
-      </div>
-      <div class="flex ml-auto" >
-        <fa-icon [icon]="faStar" class="text-lg text-blue-700"></fa-icon>
+<section>
+  <app-header></app-header>
+  <div class="flex justify-between mx-6">
+    <h1 class="font-semibold mx-6">All Posts</h1>
+    <div
+      class="bluBtn sm:hidden cursor-pointer gap-2 sm:ml-3 bg-blue-800 sm:h-fit w-24 lg:w-24 rounded-2xl items-center gap h-8 flex justify-center text-center p-2 text-white"
+    >
+      <fa-icon [icon]="faPlus" class="text-[12px]"></fa-icon>
+      <p class="text-sm">Post</p>
+    </div>
+  </div>
+  <div
+    class="overflow-y-scroll h-[75vh] sm:h-[88vh] max-h-screen w-[99%] mt-5 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4"
+  >
+    <div *ngFor="let item of items" class="flex justify-center">
+      <!-- <ul>{{item.post}}</ul> -->
+      <div
+        class="bg-blue-200 flex border-[1.4px] border-blue-700 m-2 sm:h-24 justify-center h-28 w-[87%] sm:w-[210px] lg:w-[218px] rounded-xl px-2"
+      >
+        <div class="">
+          <p
+            class="text-md font-semibold item-center text-gray-700 mt-6 sm:mt-4"
+          >
+            {{ item.profession }}
+          </p>
+          <p class="text-[10px] item-center text-gray-800">
+            ** {{ item.userName }} **
+          </p>
+          <p class="text-sm item-center text-gray-700">
+            {{ item.post | slice : 0 : 24 }}
+          </p>
+        </div>
+        <div class="flex ml-auto">
+          <fa-icon [icon]="faStar" class="text-lg text-blue-700"></fa-icon>
+        </div>
       </div>
     </div>
   </div>
