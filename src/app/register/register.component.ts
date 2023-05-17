@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { IRegister } from '../Models/login.model';
 import { AuthService } from '../Services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -15,8 +16,8 @@ import { AuthService } from '../Services/auth.service';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  constructor(private authService:AuthService) {}
-  registerForm = new IRegister('kiyan', 'Greatt','kiyan@gmail.com','22/02/02','Male','123456');
+  constructor(private authService:AuthService, private router: Router) {}
+  registerForm = new IRegister('', '','','','','');
 
   ngOnInit(): void {}
   onSubmit( Form: NgForm): void {
@@ -24,6 +25,7 @@ export class RegisterComponent implements OnInit {
     this.authService.register(Form.value).subscribe((data:any) =>{
       if(data){
         console.log(data.message);
+        this.router.navigate(['']);
       } else {
         console.log(data,"J");
         // console.log(data.success)

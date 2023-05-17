@@ -30,33 +30,35 @@
             <label>
               <p class="py-2 text-sm font-medium">Firstname:</p>
               <input
-                class="border-black sm:w-64 w-44 h-8 text-sm text-gray-500 p-2"
+                class="border-gray-400 rounded-md sm:w-64  w-44 h-8 text-sm text-gray-300 p-2"
                 type="text"
                 placeholder="Firstname"
-                name="firstname"
-                #Firstname = "ngModel"
+                id="firstName"
+                name="firstName"
+                #firstName = "ngModel"
                 [(ngModel)]="registerForm.firstName"
                   />
-              <b *ngIf= "Firstname && Firstname.invalid && Firstname.touched"> Input is invalid.. This field is required</b>
+              <b *ngIf= "firstName && firstName.invalid && firstName.touched"> Input is invalid.. This field is required</b>
             </label>
             <label>
               <p class="py-2 text-sm font-medium">Lastname:</p>
               <input
-                class="border-black sm:w-64 w-44 h-8 text-sm text-gray-500 p-2"
+                class="border-gray-400 rounded-md sm:w-64  w-44 h-8 text-sm text-gray-300 p-2"
                 type="text"
                 placeholder="Lastname"
-                name="lastname"
-                #Lastname = "ngModel"
+                id="lastName"
+                name="lastName"
+                #lastName = "ngModel"
                 [(ngModel)]="registerForm.lastName"
               />
-              <b *ngIf= "Lastname && Lastname.invalid && Lastname.touched"> Input is invalid.. This field is required</b>
+              <b *ngIf= "lastName && lastName.invalid && lastName.touched"> Input is invalid.. This field is required</b>
             </label>
           </div>
           <div class="rest block">
             <label>
               <p class="py-2 text-sm font-medium">Email:</p>
               <input
-                class="border-black sm:w-[534px] w-[375px] h-8 block text-sm text-gray-500 p-2"
+              class="border-gray-400 sm:w-[534px] rounded-md text-sm w-[375px] h-8 block text-gray-300 p-2"
                 type="email"
                 placeholder="Email"
                 name="email"
@@ -70,7 +72,7 @@
               <label>
                 <p class="py-2 text-sm font-medium">DOB:</p>
                 <input
-                  class="border-black sm:w-64 w-44 h-8 text-sm block text-gray-500 p-2"
+                  class="border-gray-400 rounded-md sm:w-64  w-44 h-8 text-sm block text-gray-300 p-2"
                   type="date"
                   placeholder="Date"
                   name="dob"
@@ -82,7 +84,7 @@
               <label>
                 <p class="py-2 text-sm font-medium">Gender:</p>
                 <input
-                  class="border-black sm:w-64 w-44 h-8 text-sm block text-gray-500 p-2"
+                  class="border-gray-400 rounded-md sm:w-64  w-44 h-8 text-sm block text-gray-300 p-2"
                   type="text"
                   placeholder="Gender"
                   name="gender"
@@ -95,7 +97,7 @@
             <label>
               <p class="py-2 text-sm font-medium">Password:</p>
               <input
-                class="border-black sm:w-[534px] text-sm w-[375px] h-8 block text-gray-500 p-2"
+              class="border-gray-400 sm:w-[534px] rounded-md text-sm w-[375px] h-8 block text-gray-300 p-2"
                 type="password"
                 placeholder="Password"
                 name="password"

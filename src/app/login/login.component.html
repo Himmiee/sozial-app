@@ -30,7 +30,7 @@
               <label>
                 <p class="py-2 text-sm font-medium">Email:</p>
                 <input
-                  class="border-black sm:w-[534px] w-[375px] h-8 block text-sm text-gray-500 p-2"
+                  class="border-gray-400 sm:w-[534px] rounded-md w-[375px] h-8 block text-sm text-gray-300 p-2"
                   type="email"
                   placeholder="Email"
                   name="email"
@@ -44,7 +44,7 @@
               <label>
                 <p class="py-2 text-sm font-medium">Password:</p>
                 <input
-                  class="border-black sm:w-[534px] text-sm w-[375px] h-8 block text-gray-500 p-2"
+                  class="border-gray-400 sm:w-[534px] rounded-md text-sm w-[375px] h-8 block text-gray-300 p-2"
                   type="password"
                   placeholder="Password"
                   name="password"
@@ -57,7 +57,7 @@
                 <div class="text-red-600 py-2 text-[12px]" *ngIf= "password && password.invalid && password.touched "> Minimum of five characters.. This field is required</div>
               </label>
             </div>
-            <p class="text-[12px] text-gray-300 pt-3">
+            <p class="text-[12px] text-gray-400 pt-3">
               Don't have an account...<span class="font-medium cursor-pointer text-red-400" [routerLink]="['/register']">Register?</span>
             </p>
             <div class="btn flex justify-center">

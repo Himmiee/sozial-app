@@ -17,8 +17,9 @@ import { AuthService } from '../Services/auth.service';
 })
 export class LoginComponent implements OnInit {
   constructor(private authService: AuthService, private router : Router) {}
-
-  loginForm = new ILogin('kiyan@gmail.com', '123456');
+  
+  errorMessage: string = ""
+  loginForm = new ILogin('', '');
   ngOnInit(): void {
     this.onSubmit;
   }
@@ -29,7 +30,8 @@ export class LoginComponent implements OnInit {
         localStorage.setItem("token", res.token)
         console.log(res.token)
 
-        this.router.navigate(['home']);
+        // this.router.navigate(['home'])
+        location.href = "/home"
         console.log('yuh');
       } else {
         console.log('you thought',res);
