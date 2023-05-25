@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faArrowAltCircleDown, faStar ,faPlus} from '@fortawesome/free-solid-svg-icons';
-import { profileService } from 'src/app/Services/profile.service';
+import { profileService } from 'app/Services/profile.service';
 
 @Component({
   selector: 'app-home',
