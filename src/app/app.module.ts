@@ -22,6 +22,7 @@ import { SettingsComponent } from './pages/settingscomp/settings.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderComponent } from './header/header.component';
 import { profileService } from './Services/profile.service';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { profileService } from './Services/profile.service';
     SettingsComponent,
     SidebarComponent,
     HeaderComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
